@@ -1,26 +1,13 @@
+using System.Runtime.Serialization;
+
 namespace CompetitiveProgramming;
 
 public class ContainsDuplicateTests
 {
     private static bool ContainsDuplicate(int[] numbers)
     {
-        if (numbers.Length <= 1)
-        {
-            return false;
-        }
-
-        var seenNumbers = new HashSet<int>();
-        foreach (var n in numbers)
-        {
-            if (seenNumbers.Contains(n))
-            {
-                return true;
-            }
-
-            seenNumbers.Add(n);
-        }
-        
-        return false;
+        var seen = new HashSet<int>();
+        return numbers.Length > 1 && numbers.Any(n => !seen.Add(n));
     }
 
     [Theory]
