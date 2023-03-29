@@ -26,27 +26,12 @@ public class TwoSumTests
         return Array.Empty<int>();
     }
 
-    [Fact]
-    public void TwoSum_GivenEmptyArray_ReturnsEmptyResults()
+    [Theory]
+    [InlineData(new int[] {}, 0)]
+    [InlineData(new int[] { 1 }, 0)]
+    [InlineData(new int[] { 1, 2 }, 4)]
+    public void TwoSum_TestEmptyResults(int[] numbers, int target)
     {
-        // Arrange
-        var numbers = Array.Empty<int>();
-        const int target = 0;
-        
-        // Act
-        var actual = TwoSum(numbers, target);
-
-        // Assert
-        Assert.Empty(actual);
-    }
-    
-    [Fact]
-    public void TwoSum_GivenSingleElementArray_ReturnsEmptyResults()
-    {
-        // Arrange
-        var numbers = new[] { 1 };
-        const int target = 0;
-        
         // Act
         var actual = TwoSum(numbers, target);
 
@@ -59,7 +44,7 @@ public class TwoSumTests
     [InlineData(new[] { 2, 7, 11, 15 }, 9, new[] { 0, 1 })]
     [InlineData(new[] { 3, 2, 4 }, 6, new[] { 1, 2 })]
     [InlineData(new[] { -10, 3 }, -7, new[] { 0, 1 })]
-    public void TwoSum_Tests(int[] numbers, int target, int[] expected)
+    public void TwoSum_TestResults(int[] numbers, int target, int[] expected)
     {
         var actual = TwoSum(numbers, target);
         
