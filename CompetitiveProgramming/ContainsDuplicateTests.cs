@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace CompetitiveProgramming;
 
 public class ContainsDuplicateTests
@@ -18,6 +16,6 @@ public class ContainsDuplicateTests
     public void ContainsDuplicate_Tests(int[] numbers, bool expected)
     {
         var actual = ContainsDuplicate(numbers);
-        Assert.Equal(expected, actual);
+        actual.Should().Be(expected);
     }
 }

@@ -32,11 +32,8 @@ public class TwoSumTests
     [InlineData(new int[] { 1, 2 }, 4)]
     public void TwoSum_TestEmptyResults(int[] numbers, int target)
     {
-        // Act
         var actual = TwoSum(numbers, target);
-
-        // Assert
-        Assert.Empty(actual);
+        actual.Should().BeEmpty();
     }
 
     [Theory]
@@ -47,8 +44,6 @@ public class TwoSumTests
     public void TwoSum_TestResults(int[] numbers, int target, int[] expected)
     {
         var actual = TwoSum(numbers, target);
-        
-        Assert.Equal(expected[0], actual[0]);
-        Assert.Equal(expected[1], actual[1]);
+        actual.Should().BeEquivalentTo(expected, options => options.WithStrictOrdering());
     }
 }

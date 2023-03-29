@@ -37,6 +37,6 @@ public class BinarySearchTests
         Array.Sort(numbers);
         
         var actual = BinarySearch(numbers, target);
-        Assert.Equal(expected, actual);
+        actual.Should().Be(expected);
     }
 }

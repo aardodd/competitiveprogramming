@@ -25,6 +25,6 @@ public class BestTimeToBuyAndSellStockTests
     public void MaximumProfit_Tests(int[] prices, int expectedProfit)
     {
         var actualProfit = MaximumProfit(prices);
-        Assert.Equal(expectedProfit, actualProfit);
+        actualProfit.Should().Be(expectedProfit);
     }
 }

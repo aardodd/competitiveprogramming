@@ -46,6 +46,6 @@ public class ValidAnagramTests
     public void ValidAnagram_Tests(string s, string t, bool expected)
     {
         var actual = ValidAnagram(s, t);
-        Assert.Equal(expected, actual);
+        actual.Should().Be(expected);
     }
 }

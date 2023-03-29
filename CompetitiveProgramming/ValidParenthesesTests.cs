@@ -42,6 +42,6 @@ public class ValidParenthesesTests
     public void ValidParentheses_Tests(string s, bool expected)
     {
         var actual = ValidParentheses(s);
-        Assert.Equal(expected, actual);
+        actual.Should().Be(expected);
     }
 }

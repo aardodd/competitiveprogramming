@@ -49,6 +49,6 @@ public class ValidPalindromeTests
     public void ValidPalindrome_Tests(string s, bool expected)
     {
         var actual = ValidPalindrome(s);
-        Assert.Equal(expected, actual);
+        actual.Should().Be(expected);
     }
 }
