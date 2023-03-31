@@ -12,3 +12,19 @@ public class ListNode
         this.Next = next;
     }
 }
+
+public class TreeNode
+{
+    public int Value { get; set; }
+    
+    public TreeNode? Left { get; set; }
+    
+    public TreeNode? Right { get; set; }
+
+    public TreeNode(int value = 0, TreeNode? left = null, TreeNode? right = null)
+    {
+        this.Value = value;
+        this.Left = left;
+        this.Right = right;
+    }
+}
