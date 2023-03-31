@@ -49,7 +49,20 @@ public class ReverseLinkedListTests
         // Assert
         actual.Should().BeEquivalentTo(expected);
     }
-
+    
+    [Fact]
+    public void ReverseLinkedListRecursive_GivenAnEmptyList_ReturnsNull()
+    {
+        // Arrange
+        ListNode? input = null;
+        
+        // Act
+        var actual = ReverseLinkedListRecursive(input);
+        
+        // Assert
+        actual.Should().BeNull();
+    }
+    
     [Fact]
     public void ReverseLinkedListRecursive_GivenAList_ReversesIt()
     {

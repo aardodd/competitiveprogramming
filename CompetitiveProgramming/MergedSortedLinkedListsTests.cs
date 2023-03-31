@@ -36,12 +36,27 @@ public class MergedSortedLinkedListsTests
     }
     
     [Fact]
-    public void MergedSortedLists_GivenTwoList_MergesThem()
+    public void MergedSortedLists_GivenLongerLeftList_MergesThem()
     {
         // Arrange
         var left = new ListNode(1, new ListNode(2, new ListNode(3)));
         var right = new ListNode(0, new ListNode(4));
         var expected = new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4)))));
+        
+        // Act
+        var actual = MergedSortedLists(left, right);
+        
+        // Assert
+        actual.Should().BeEquivalentTo(expected);
+    }
+    
+    [Fact]
+    public void MergedSortedLists_GivenLongerRightList_MergesThem()
+    {
+        // Arrange
+        var left = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        var right = new ListNode(0, new ListNode(4));
+        var expected = new ListNode(0, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4))))));
         
         // Act
         var actual = MergedSortedLists(left, right);
