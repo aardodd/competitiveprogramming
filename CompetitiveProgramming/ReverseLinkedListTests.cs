@@ -2,9 +2,9 @@
 
 public class ReverseLinkedListTests
 {
-    private static ListNode ReverseLinkedListIterative(ListNode list)
+    private static ListNode? ReverseLinkedListIterative(ListNode list)
     {
-        ListNode previousNode = null;
+        ListNode? previousNode = null;
         var currentNode = list;
 
         while (currentNode != null)
