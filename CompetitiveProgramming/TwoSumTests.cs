@@ -28,8 +28,8 @@ public class TwoSumTests
 
     [Theory]
     [InlineData(new int[] {}, 0)]
-    [InlineData(new int[] { 1 }, 0)]
-    [InlineData(new int[] { 1, 2 }, 4)]
+    [InlineData(new[] { 1 }, 0)]
+    [InlineData(new[] { 1, 2 }, 4)]
     public void TwoSum_TestEmptyResults(int[] numbers, int target)
     {
         var actual = TwoSum(numbers, target);
